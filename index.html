@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Stage one </title>
+  <link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<div class="user-profile">
+	<img class="avatar" src="hamed.jpg" data-testid="slackDisplayImage" alt="Hamed Olundegun" />
+    <div class="username" data-testid ="slackUserName">Hamed Olundegun</div>
+  <div class="bio" data-testid="myTrack">
+  	FRONT-END
+  </div>
+   <div class="description" >
+   <p id="demo" data-testid="currentDayOfTheWeek"></p>
+	    <p id="time"  data-testid="currentUTCTime"></p>
+   </div>
+	   
+
+</div>
+  <footer>
+    <h1>GitHub repository 
+  <a href="https://dribbble.com/shots/1033074-User-Profile" data-testid="githubURL">link</a>
+    </h1>
+  </footer>
+<!-- partial -->
+  <script  src="./script.js"></script>
+  
+ 
+
+
+<script>
+const d = new Date();
+let ms = d.getUTCMilliseconds();
+document.getElementById("time").innerHTML = ms;
+</script>
+ 
+
+<script>
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+days.forEach((day,index)=>{
+    // Check if the index of day value is equal to the returned value of getDay()
+    if(index == new Date().getDay())
+    document.getElementById("demo").innerHTML = day;
+    }
+)
+</script>
+
+</body>
+</html>
